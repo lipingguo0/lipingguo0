@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "34fad41f-c387-44cf-afbe-2f61798efbbf",
-    "name": "NoneLocalhost_test",
+    "name": "NoneLocalhostUUUU",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -35,7 +35,7 @@
           }
         }
       ],
-      "_postman_id": "65021a21-a7ba-4a43-ad9f-e1c0d0c20137",
+      "id": "65021a21-a7ba-4a43-ad9f-e1c0d0c20137",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -110,7 +110,7 @@
           }
         }
       ],
-      "_postman_id": "305fb09e-f6da-495c-af99-a442127361b5",
+      "id": "305fb09e-f6da-495c-af99-a442127361b5",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -161,7 +161,7 @@
           }
         }
       ],
-      "_postman_id": "b78e95e8-316c-45f9-83cd-8461153103b1",
+      "id": "b78e95e8-316c-45f9-83cd-8461153103b1",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
@@ -219,7 +219,7 @@
           }
         }
       ],
-      "_postman_id": "17ce2bee-dc47-47d8-b1fe-fa0d6670a88f",
+      "id": "17ce2bee-dc47-47d8-b1fe-fa0d6670a88f",
       "protocolProfileBehavior": {
         "disableBodyPruning": true
       },
