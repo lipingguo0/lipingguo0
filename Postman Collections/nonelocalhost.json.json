@@ -1,0 +1,266 @@
+{
+  "info": {
+    "_postman_id": "34fad41f-c387-44cf-afbe-2f61798efbbf",
+    "name": "NoneLocalhost",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "RVToPDF_healthCheck",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "b37d5b25-7466-4f01-af51-1546d558d50a",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"PDF should return\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"PDF-1\");\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "317a19bf-2b79-4f9d-9ac6-5596ba71495f",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "65021a21-a7ba-4a43-ad9f-e1c0d0c20137",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-moodys-doc-id",
+            "value": "PBC_1270903",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "default"
+          },
+          {
+            "key": "Accept",
+            "value": "application/pdf",
+            "type": "default"
+          }
+        ],
+        "url": {
+          "raw": "{{base-url}}/media/PBC_1270903?fileType=pdf",
+          "host": [
+            "{{base-url}}"
+          ],
+          "path": [
+            "media",
+            "PBC_1270903"
+          ],
+          "query": [
+            {
+              "key": "fileType",
+              "value": "pdf"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RatingMethodology_healthCheck",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "id": "5c6c2079-3457-4bcf-84c1-fa36b06631ab"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json()\r",
+              "\r",
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "//switch host not on in localhost\r",
+              "pm.test(\"Rating methodology research should return\", function () {\r",
+              "    pm.expect(jsonData.length).to.gt(0);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "id": "4c7d155d-51ef-4fba-8fb3-b55ac4cec2c3"
+          }
+        }
+      ],
+      "_postman_id": "305fb09e-f6da-495c-af99-a442127361b5",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-moodys-doc-id",
+            "value": "PBC_1270903",
+            "type": "text"
+          }
+        ],
+        "url": "{{base-url}}/rating-methodology/PBC_1270903"
+      },
+      "response": []
+    },
+    {
+      "name": "TextToSpeech_healthCheck",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json()\r",
+              "\r",
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "//split switch may not on in localhost\r",
+              "pm.test(\"Text to speech should return mp3 and marks\", function () {\r",
+              "    pm.expect(jsonData.mp3Uri).to.include(\"mp3\");\r",
+              "    pm.expect(jsonData.markUri).to.include(\"marks\")\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "id": "40419545-5eaf-4c91-a5de-090da6144e75"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "id": "93cb2c1c-b1c1-4178-960f-f9f3a606d3aa"
+          }
+        }
+      ],
+      "_postman_id": "b78e95e8-316c-45f9-83cd-8461153103b1",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-moodys-doc-id",
+            "value": "PBC_1270903",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base-url}}/media/PBC_1270903?fileType=mp3",
+          "host": [
+            "{{base-url}}"
+          ],
+          "path": [
+            "media",
+            "PBC_1270903"
+          ],
+          "query": [
+            {
+              "key": "fileType",
+              "value": "mp3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RouteCheck_PDF_healthCheck",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "id": "abec49c6-6b5f-46f8-b5c7-45f65b4ff4c9"
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 307\", function () {\r",
+              "    pm.response.to.have.status(307);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "id": "cdd34483-15f1-4036-a7a5-9675e31f0c23"
+          }
+        }
+      ],
+      "_postman_id": "17ce2bee-dc47-47d8-b1fe-fa0d6670a88f",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-moodys-doc-id",
+            "value": "COP_131175",
+            "type": "text"
+          }
+        ],
+        "url": "{{base-url}}/route-check/COP_131175"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.request.headers.add({key: 'x-correlation-id', value: 'smoke-test' });",
+          "pm.request.headers.add({key: 'x-moodys-user-id', value: 'anonymous' });",
+          "pm.request.headers.add({key: 'x-moodys-user-name', value: 'anonymous' });",
+          "pm.request.headers.add({key: 'x-moodys-login-user-type', value: '1' });",
+          ""
+        ],
+        "id": "871fd7d8-d02b-49e3-b5bd-e518401f78f8"
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ],
+        "id": "8acf044b-4ffc-4349-9dcf-b7428c44ce6a"
+      }
+    }
+  ]
+}
