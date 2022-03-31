@@ -6,56 +6,6 @@
   },
   "item": [
     {
-      "name": "RatingMethodology_healthCheck",
-      "event": [
-        {
-          "listen": "prerequest",
-          "script": {
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript",
-            "id": "5c6c2079-3457-4bcf-84c1-fa36b06631ab"
-          }
-        },
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "var jsonData = pm.response.json()\r",
-              "\r",
-              "pm.test(\"Status code is 200\", function () {\r",
-              "    pm.response.to.have.status(200);\r",
-              "});\r",
-              "\r",
-              "//switch host not on in localhost\r",
-              "pm.test(\"Rating methodology research should return\", function () {\r",
-              "    pm.expect(jsonData.length).to.gt(0);\r",
-              "});"
-            ],
-            "type": "text/javascript",
-            "id": "4c7d155d-51ef-4fba-8fb3-b55ac4cec2c3"
-          }
-        }
-      ],
-      "id": "305fb09e-f6da-495c-af99-a442127361b5",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "x-moodys-doc-id",
-            "value": "PBC_1270903",
-            "type": "text"
-          }
-        ],
-        "url": "{{base-url}}/rating-methodology/PBC_1270903"
-      },
-      "response": []
-    },
-    {
       "name": "TextToSpeech_healthCheck",
       "event": [
         {
