@@ -1,82 +1,10 @@
 {
   "info": {
     "_postman_id": "34fad41f-c387-44cf-afbe-2f61798efbbf",
-    "name": "NoneLocalhostSSS",
+    "name": "NoneLocalhostUUUU",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
-    {
-      "name": "RVToPDF_healthCheck",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "b37d5b25-7466-4f01-af51-1546d558d50a",
-            "exec": [
-              "pm.test(\"Status code is 200\", function () {\r",
-              "    pm.response.to.have.status(200);\r",
-              "});\r",
-              "\r",
-              "pm.test(\"PDF should return\", function () {\r",
-              "    pm.expect(pm.response.text()).to.include(\"PDF-1\");\r",
-              "});"
-            ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "317a19bf-2b79-4f9d-9ac6-5596ba71495f",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "id": "65021a21-a7ba-4a43-ad9f-e1c0d0c20137",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "x-moodys-doc-id",
-            "value": "PBC_1270903",
-            "type": "text"
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "type": "default"
-          },
-          {
-            "key": "Accept",
-            "value": "application/pdf",
-            "type": "default"
-          }
-        ],
-        "url": {
-          "raw": "{{base-url}}/media/PBC_1270903?fileType=pdf",
-          "host": [
-            "{{base-url}}"
-          ],
-          "path": [
-            "media",
-            "PBC_1270903"
-          ],
-          "query": [
-            {
-              "key": "fileType",
-              "value": "pdf"
-            }
-          ]
-        }
-      },
-      "response": []
-    },
     {
       "name": "RatingMethodology_healthCheck",
       "event": [
